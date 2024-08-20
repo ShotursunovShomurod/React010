@@ -2,23 +2,23 @@ import { useStateValue } from "@/context";
 import React, { useState } from "react";
 
 const Products = ({ data, title }) => {
-  const [likedProducts, setLikedProducts] = useState(new Set());
+  const [ProductsLike, setProductsLike] = useState(new Set());
   const [_, dispatch] = useStateValue();
 
   const handleLike = (productId) => {
-    setLikedProducts((prevLiked) => {
-      const newLiked = new Set(prevLiked);
-      if (newLiked.has(productId)) {
-        newLiked.delete(productId);
+    setProductsLike((prevLiked) => {
+      const likedBlock = new Set(prevLiked);
+      if (likedBlock.has(productId)) {
+        likedBlock.delete(productId);
       } else {
-        newLiked.add(productId);
+        likedBlock.add(productId);
       }
-      return newLiked;
+      return likedBlock;
     });
   };
 
   const items = data?.map((product) => {
-    const isLiked = likedProducts.has(product.id);
+    const isLiked = ProductsLike.has(product.id);
 
     return (
       <div
@@ -66,7 +66,7 @@ const Products = ({ data, title }) => {
           <div className="flex justify-between mt-4">
             <button
               onClick={() => dispatch({ type: "ADD_CART", payload: product })}
-              className="py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition"
+              className="py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
             >
               Add to Cart
             </button>

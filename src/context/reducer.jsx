@@ -1,7 +1,7 @@
 // src/context/reducer.jsx
 
 export const initialState = {
-  a: 5,
+  number: 5,
   wishList: [],
   cart: [],
 };

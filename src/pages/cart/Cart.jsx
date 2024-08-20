@@ -30,7 +30,7 @@ const Cart = () => {
       <h2 className="text-3xl font-bold mb-4">Shopping Cart</h2>
       <div className="bg-white shadow-md rounded-lg p-4">
         {cart.length === 0 ? (
-          <p>Your cart is empty.</p>
+          <p>Cartlar qoshimagan</p>
         ) : (
           cart.map((item) => (
             <div
@@ -62,9 +62,9 @@ const Cart = () => {
                 </button>
                 <button
                   onClick={() => handleRemove(item.id)}
-                  className="bg-gray-500 text-white px-2 py-1 rounded-lg ml-4"
+                  className="bg-[#ff1a1a] text-white px-2 py-1 rounded-lg ml-4"
                 >
-                  Remove
+                  Delete
                 </button>
               </div>
             </div>
