@@ -66,9 +66,9 @@ const Products = ({ data, title }) => {
           <div className="flex justify-between mt-4">
             <button
               onClick={() => dispatch({ type: "ADD_CART", payload: product })}
-              className="py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+              className="py-2 px-4 bg-[#00ffdd] text-white rounded-lg hover:bg-green-600 transition"
             >
-              Add to Cart
+              Cartga qo'shish
             </button>
           </div>
         </div>
